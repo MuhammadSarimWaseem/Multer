@@ -24,7 +24,7 @@ const upload = multer({ storage });
 app.use(express.json());
 
 // Route to create course
-app.post("/createCourse", upload.single("image"), async (req, res) => {
+app.post("/multer", upload.single("image"), async (req, res) => {
     try {
         const { title, description, price } = req.body;
         if (!title || !description || !price) return res.status(400).json({ message: "Missing fields" });
@@ -42,4 +42,4 @@ app.post("/createCourse", upload.single("image"), async (req, res) => {
     }
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`));
