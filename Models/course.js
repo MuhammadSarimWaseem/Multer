@@ -1,7 +1,8 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
 
 mongoose
-    .connect("mongodb://localhost:27017/multer")
+    .connect(process.env.MONGO_CONNECTION)
     .then(() => { console.log("Mongo connected") })
     .catch(() => { console.log("Connection error") })
 

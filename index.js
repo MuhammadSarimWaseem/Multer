@@ -3,9 +3,10 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const courseModel = require("./Models/course");
+require('dotenv').config()
 
 const app = express();
-const PORT = 8001;
+const PORT = process.env.PORT;
 
 // Ensure upload directory exists
 const uploadDir = "./public/uploads/";
