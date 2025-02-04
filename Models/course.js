@@ -1,12 +1,6 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 
-mongoose
-    .connect(process.env.MONGO_CONNECTION)
-    .then(() => { console.log("Mongo connected") })
-    .catch(() => { console.log("Connection error") })
-
-
 const courseSchema = new mongoose.Schema({
     title: {
         type: String,
