@@ -6,8 +6,6 @@ const fs = require("fs");
 const courseModel = require("../Models/course");
 require('dotenv').config()
 
-const PORT = process.env.PORT;
-
 // Ensure upload directory exists
 const uploadDir = "./public/uploads/";
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
